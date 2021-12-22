@@ -50,8 +50,8 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: const [
-          Padding(
+        children: [
+          const Padding(
             padding: EdgeInsets.only(
               top: 10,
               left: 0,
@@ -65,12 +65,12 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: ListTile(
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"),
+                    "https://images.unsplash.com/photo-1640065737543-be54644d7b5f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMTh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
                 radius: 25,
               ),
               title: Text(
@@ -84,20 +84,20 @@ class MyHomePage extends StatelessWidget {
               trailing: Icon(Icons.more_horiz),
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: ListTile(
               leading: (CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"),
+                    "https://images.unsplash.com/photo-1616486788371-62d930495c44?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
                 radius: 25,
               )),
               title: Text(
-                "Leticia Bethel",
+                "Leticia Kumah",
                 style: TextStyle(color: Colors.black, fontSize: 20),
               ),
               subtitle: Text(
@@ -107,16 +107,16 @@ class MyHomePage extends StatelessWidget {
               trailing: Icon(Icons.more_horiz),
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(8.0),
             child: ListTile(
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(
-                    "https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"),
+                    "https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNjh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
                 radius: 25,
               ),
               title: Text(
@@ -130,63 +130,70 @@ class MyHomePage extends StatelessWidget {
               trailing: Icon(Icons.more_horiz),
             ),
           ),
-          Divider(
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(top: 10, left: 0, right: 250),
             child: Text(
               "Contacts",
               style: TextStyle(color: Colors.black, fontSize: 20),
             ),
           ),
-          callWidget(
-              name: ' Sylvester Amoak0',
-              number: '0557001326',
-              picture:
-                  'https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-          Divider(
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const ProfilePage();
+              }));
+            },
+            child: const callWidget(
+                name: ' Sylvester Amoako',
+                number: '0557001326',
+                picture:
+                    'https://images.unsplash.com/photo-1639898649971-f441e5d6bc6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMTJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'),
+          ),
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          callWidget(
+          const callWidget(
               name: ' Bristotle',
               number: '055756342',
               picture:
-                  'https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-          Divider(
+                  'https://images.unsplash.com/photo-1639944134536-844e1684d5ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'),
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          callWidget(
+          const callWidget(
               name: ' Jeffery Amoah',
               number: '0556001234',
               picture:
-                  'https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-          Divider(
+                  'https://images.unsplash.com/photo-1640083034965-b6944ebaf3b1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'),
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          callWidget(
+          const callWidget(
               name: ' Leticia',
               number: '0555157095',
               picture:
-                  'https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-          Divider(
+                  'https://images.unsplash.com/photo-1640058909746-a1c76cd29962?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4Mnx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'),
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          callWidget(
-              name: ' Leticia',
+          const callWidget(
+              name: ' Prysla ',
               number: '0555157095',
               picture:
-                  'https://images.unsplash.com/photo-1638913665258-ddd2bceafb30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60'),
-          Divider(
+                  'https://images.unsplash.com/photo-1633113087654-c49c686c2cdf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxMTl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60'),
+          const Divider(
             thickness: 2,
             height: 0,
           ),
-          Divider(
+          const Divider(
             thickness: 2,
             height: 0,
           )

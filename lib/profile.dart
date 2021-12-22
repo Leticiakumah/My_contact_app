@@ -1,4 +1,6 @@
+// ignore_for_file: file_names
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -6,51 +8,176 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.black),
         title: const Padding(
           padding: EdgeInsets.only(left: 0, right: 20),
           child: Center(
             child: Text(
-              "Contact",
-              style: TextStyle(color: Colors.black, fontSize: 20),
+              "Contacts",
+              style: TextStyle(color: Colors.black),
             ),
           ),
         ),
         actions: const [
-          Icon(
-            Icons.more_vert,
-            color: Colors.black,
-          ),
+          Icon(Icons.more_vert_outlined),
         ],
-        elevation: 0,
-        bottom: PreferredSize(
-            child: Column(
-              children: const [
-                Padding(
-                  padding: EdgeInsets.only(bottom: 15, top: 8),
+      ),
+      body: ListView(
+        children: [
+          Column(
+            children: const [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: CircleAvatar(
                     backgroundImage: NetworkImage(
-                        'https://images.unsplash.com/photo-1639944134536-844e1684d5ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0M3x8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60'),
-                    radius: 80,
+                        "https://images.unsplash.com/photo-1639412003840-9c858dc5bce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyOXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"),
+                    radius: 100,
                   ),
                 ),
-                Text(
-                  "Wendy Essel Djan",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Todor Kruz",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                "Pardubice, Czechia",
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Divider(
+                thickness: 1,
+                height: 0,
+                color: Colors.grey,
+              ),
+            ],
+          ),
+          Container(
+            color: const Color(0xfff3fff9),
+            child: Column(
+              children: [
+                ListTile(
+                  title: const Text(
+                    "Mobile",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  subtitle: const Text("+233 20 01 68 111"),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: const Icon(
+                          Icons.message,
+                          color: Colors.black,
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: const CircleBorder(
+                              side: BorderSide(style: BorderStyle.solid)),
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: const Icon(
+                          Icons.phone,
+                          color: Colors.black,
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: const CircleBorder(
+                              side: BorderSide(style: BorderStyle.solid)),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-                Text(
-                  "0857345678",
-                  style: TextStyle(fontSize: 20, color: Colors.black),
+                ListTile(
+                  title: const Text(
+                    "Email",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  subtitle: const Text("todorkruz@gmail.com"),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: const Icon(
+                          Icons.email,
+                          color: Colors.black,
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: const CircleBorder(
+                            side: BorderSide(style: BorderStyle.solid),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const ListTile(
+                  title: Text(
+                    "Group",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  ),
+                  subtitle: Text("Uni friends"),
+                ),
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              "Account Linked",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Container(
+            color: const Color(0xfff3fff9),
+            child: (Column(
+              children: const [
+                ListTile(
+                  title: Text("Telegram"),
+                  trailing: Icon(
+                    FontAwesomeIcons.telegram,
+                    color: Colors.blue,
+                  ),
+                ),
+                ListTile(
+                  title: Text("WhatsApp"),
+                  trailing: Icon(
+                    FontAwesomeIcons.whatsapp,
+                    color: Colors.green,
+                  ),
+                )
+              ],
+            )),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Text(
+              "More Options",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Container(
+            color: const Color(0xfff3fff9),
+            child: Column(
+              children: const [
+                ListTile(
+                  title: Text("Share Contact"),
                 )
               ],
             ),
-            preferredSize: const Size.fromHeight(200)),
+          )
+        ],
       ),
-     
     );
   }
 }
